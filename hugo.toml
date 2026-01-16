@@ -65,6 +65,10 @@ pygmentsCodefencesGuessSyntax = true
   logoTitle = "Varyan.z"
   version = "4.x"
   since = "2026"                       # 建站年份
+  mathjax = true
+  mathjaxEnableSingleDollar = true
+  customJS = ["copy-tex.js"]
+  customCSS = ["slideout-mode.css"]
   
   
   # 界面与体验
@@ -88,3 +92,15 @@ pygmentsCodefencesGuessSyntax = true
 
 [markup.goldmark.renderer]
   unsafe = true                        # 允许在 Markdown 中直接写 HTML (很多功能需要开启这个)
+
+[markup.goldmark.extensions]
+  [markup.goldmark.extensions.passthrough]
+    enable = true
+    inlineDelimiters = [
+      {left = "$", right = "$"},
+      {left = "\\(", right = "\\)"}
+    ]
+    blockDelimiters = [
+      {left = "$$", right = "$$"},
+      {left = "\\[", right = "\\]"}
+    ]
