@@ -1,4 +1,4 @@
-baseURL = "https://你的域名.pages.dev/"  # 上线后替换为你的 Cloudflare 域名
+baseURL = "https://www.VaryanZhang.com/"  # 上线后替换为你的 Cloudflare 域名
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"       # 设置默认为中文
 title = "Varyan.Z"                  # 博客标题
