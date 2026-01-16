@@ -1,0 +1,90 @@
+baseURL = "https://你的域名.pages.dev/"  # 上线后替换为你的 Cloudflare 域名
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"       # 设置默认为中文
+title = "Varyan.Z"                  # 博客标题
+theme = "even"
+
+preserveTaxonomyNames = true
+enableRobotsTXT = true
+enableEmoji = true
+hasCJKLanguage = true                  # 开启对中文/日文/韩文的支持（影响字数统计）
+
+# 代码高亮设置 (保持默认即可)
+pygmentsOptions = "linenos=table"
+pygmentsCodefences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
+
+# 分页设置
+[pagination]
+  pagerSize = 10
+
+[author]
+  name = "你的名字"                     # 改成你的名字
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# --- 菜单栏配置 (已汉化) ---
+
+
+
+
+[[menu.main]]
+  name = "首页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+
+[[menu.main]]
+  name = "归档"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+
+[[menu.main]]
+  name = "分类"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.main]]
+  name = "关于"                       # 添加了 About 页面，为了匹配你截图的完整性
+  weight = 50
+  identifier = "about"
+  url = "/about/"
+# --- 主题核心参数 ---
+[params]
+  logoTitle = "Varyan.z"
+  version = "4.x"
+  since = "2026"                       # 建站年份
+  
+  
+  # 界面与体验
+  toc = true                           # 开启目录
+  autoCollapseToc = true               # 自动折叠目录
+  fancybox = true                      # 开启图片灯箱效果
+  
+  # 归档页设置
+  archivePaginate = 50
+  showArchiveCount = true              # 显示归档总文章数
+  dateFormatToUse = "2006-01-02"       # 日期格式
+  
+  # 社交链接 (不需要的直接注释掉或留空)
+  [params.social]
+    a-email = "mailto:your@email.com"
+    g-github = "https://github.com/你的ID"
+
+# --- 隐私与渲染设置 ---
+[privacy.googleAnalytics]
+  anonymizeIP = true
+
+[markup.goldmark.renderer]
+  unsafe = true                        # 允许在 Markdown 中直接写 HTML (很多功能需要开启这个)

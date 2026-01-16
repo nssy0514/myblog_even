@@ -1,0 +1,60 @@
+/* static/css/slideout-mode.css */
+
+/* ============================================================
+   1. 暴力隐藏电脑端的文字导航 (Home, Archives...)
+   ============================================================ */
+/* 使用 !important 覆盖所有媒体查询 */
+nav.site-navbar {
+  display: none !important; 
+}
+
+/* ============================================================
+   2. 强制召唤“三道杠”图标 (原本在电脑上是被隐藏的)
+   ============================================================ */
+.slideout-toggle {
+  display: flex !important;  /* 强制显示 */
+  position: fixed !important;
+  left: 20px;
+  top: 20px;
+  z-index: 1000;             /* 保证层级最高，不被遮挡 */
+  cursor: pointer;
+  
+  /* 确保图标有尺寸，即使内容为空也能被点击 */
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 强制给三道杠上色，防止因颜色也是白色而“隐形” */
+.slideout-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #333 !important; /* 深灰色，确保在浅色背景下可见 */
+  margin: 5px auto;
+  border-radius: 1px;
+}
+
+/* ============================================================
+   3. 标题 (Varyan.z) 绝对居中方案
+   ============================================================ */
+/* 第一步：让包裹层脱离文档流 */
+.header .logo-wrapper {
+  position: absolute !important;
+  left: 50% !important;
+  top: 20px !important;      /* 距离顶部的距离，可微调 */
+  transform: translateX(-50%) !important; /* 经典的绝对居中算法 */
+  
+  float: none !important;    /* 清除原本的左浮动 */
+  margin: 0 !important;
+  text-align: center !important;
+  z-index: 900;              /* 层级低于菜单按钮，防止挡住它 */
+}
+
+/* 第二步：调整字体大小（可选） */
+.header .logo {
+  font-size: 28px !important;
+  font-weight: bold;
+}
